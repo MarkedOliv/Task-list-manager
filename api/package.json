@@ -1,0 +1,29 @@
+{
+  "name": "task-list-manager",
+  "version": "1.0.0",
+  "description": "Making a task list manager using PERN Stack.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkedOliv/Task-list-manager.git"
+  },
+  "keywords": [],
+  "author": "MarkedOliv - Oliver Márquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkedOliv/Task-list-manager/issues"
+  },
+  "homepage": "https://github.com/MarkedOliv/Task-list-manager#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
