@@ -1,16 +1,15 @@
 const { Tasks } = require('../db.js');
 
-const getAllTasks = async (req, res) => {
+const getAllTasks = async (req, res, next) => {
 
     try {
         const allTasks = await Tasks.findAll({});
         res.status(200).json(allTasks);
     } catch (error) {
-        console.log(error);
-        res.status(500).json({error: error});
+        next(error);
     }
 }
-const getTask = async (req, res) => {
+const getTask = async (req, res, next) => {
     const { id } = req.params;
 
     try {
@@ -19,11 +18,10 @@ const getTask = async (req, res) => {
         if(!task) return res.status(404).json({ message: 'Task not found :(('});
         res.status(200).json(task);
     } catch (error) {
-        console.log(error);
-        res.status(500).json({error: error});
+        next(error);
     }
 }
-const createTask = async (req, res) => {
+const createTask = async (req, res, next) => {
     const { title, description } = req.body;
 
     try {
@@ -31,11 +29,10 @@ const createTask = async (req, res) => {
         const newTask = await Tasks.create({title: title, description: description});
         res.status(201).json({ message: 'Task created succesfully'});
     } catch (error) {
-        console.log(error);
-        res.status(500).json({error: error});
+        next(error);
     }
 }
-const updateTask= async (req, res) => {
+const updateTask= async (req, res, next) => {
     const { id } = req.params;
     const { title, description } = req.body;
 
@@ -62,11 +59,10 @@ const updateTask= async (req, res) => {
         }
     
     } catch (error) {
-        console.log(error);
-        res.status(500).json({error: error});
+        next(error);
     }
 }
-const deleteTask= async (req, res) => {
+const deleteTask= async (req, res, next) => {
     const { id } = req.params;
 
     try {
@@ -76,8 +72,7 @@ const deleteTask= async (req, res) => {
         await Tasks.destroy({ where: {id}});
         return res.status(204);
     } catch (error) {
-        console.log(error);
-        res.status(500).json({error: error});
+        next(error);
     }
 }
 
