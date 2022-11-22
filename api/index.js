@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const { conn } = require('./src/db.js');
 
-const taskRoutes = require('./routes/task.routes.js');
+const taskRoutes = require('./src/routes/task.routes.js');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
