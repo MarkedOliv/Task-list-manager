@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const { conn } = require('./db.js');
+const { conn } = require('./src/db.js');
 
 const taskRoutes = require('./routes/task.routes.js');
 
