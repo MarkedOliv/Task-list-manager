@@ -22,7 +22,7 @@ export default function TaskForm() {
   }, [params.id])
   
   const loadTask = async (id) => {
-    const res = await fetch(`http://localhost:3001/tasks/${id}`)
+    const res = await fetch(`https://task-list-manager-api.vercel.app/tasks/${id}`)
     const data = await res.json();
     setTask({title: data.title, description: data.description});
     setEditing(true);
@@ -47,7 +47,7 @@ export default function TaskForm() {
       const data = await res.json();
       console.log(data)
     } else {
-      await fetch('http://localhost:3001/tasks', {
+      await fetch('https://task-list-manager-api.vercel.app/tasks', {
         method: 'POST',
         body: JSON.stringify(task),
         headers: { 'Content-Type': 'application/json'}
