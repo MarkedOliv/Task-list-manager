@@ -8,14 +8,14 @@ export default function TaskList() {
   const [tasks, setTasks] = useState([]);
 
   const loadTasks = async () => {
-    const res = await fetch('http://localhost:3001/tasks');
+    const res = await fetch('https://task-list-manager-api.vercel.app/tasks');
     const data = await res.json();
     setTasks(data)
   }  
   const handleDelete = async (id) => {
     try {
       setTasks(tasks.filter((task) => task.id !== id));
-      await fetch(`http://localhost:3001/tasks/${id}`, {
+      await fetch(`https://task-list-manager-api.vercel.app/tasks/${id}`, {
         method: 'DELETE',
       });
     } catch (error) {

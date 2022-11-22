@@ -39,7 +39,7 @@ export default function TaskForm() {
     
     setLoading(true);
     if(editing) {
-      const res = await fetch(`http://localhost:3001/tasks/${params.id}`, {
+      const res = await fetch(`https://task-list-manager-api.vercel.app/tasks/${params.id}`, {
         method: 'PUT',
         body: JSON.stringify(task),
         headers: { 'Content-Type': 'application/json'}
