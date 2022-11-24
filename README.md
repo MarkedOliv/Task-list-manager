@@ -1,13 +1,11 @@
 # Task-list-manager
 Making a task list manager using PERN Stack.
 
-# ## Project Objectives
-
+### Project Objectives
 - Make an app using React, Material UI, NodeJS, Express PostgreSQL Sequelize.
 ## Statement
 
 Make a Task Manager folowing a youtube video(https://youtu.be/_zGL_MU29zs) for practice and learn about Material UI and improve my React, NodeJS, Express, Postgres and Sequelize skills.
-
 
 I'm going to add users and authentication by myself.
 
@@ -24,5 +22,5 @@ I'm going to add users and authentication by myself.
 - after you got that you can use npm start in the api folder & npm start in the client folder
 - Now you can see the app in your localhost
 
-## 
-![task-list-manager]()
+## https://task-list-manager.vercel.app/
+![task-list-manager](https://raw.githubusercontent.com/MarkedOliv/MarkedOliv/main/TaskListManagerHome.PNG)
